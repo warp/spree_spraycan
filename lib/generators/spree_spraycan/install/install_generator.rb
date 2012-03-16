@@ -3,11 +3,11 @@ module SpreeSpraycan
     class InstallGenerator < Rails::Generators::Base
 
       def add_javascripts
-        append_file "app/assets/javascripts/store/all.js", "//= require spraycan/embed\n" 
+        append_file "app/assets/javascripts/store/all.js", "//= require spraycan/editor/embed\n" 
       end
 
       def add_stylesheets
-        inject_into_file "app/assets/stylesheets/store/all.css", " *= require spraycan/embed\n", :before => /\*\//, :verbose => true
+        inject_into_file "app/assets/stylesheets/store/all.css", " *= require spraycan/editor/embed\n", :before => /\*\//, :verbose => true
       end
 
       def add_migrations
